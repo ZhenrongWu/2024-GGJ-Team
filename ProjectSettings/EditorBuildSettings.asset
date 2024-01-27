@@ -6,15 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Justin/Scenes/Lobby.unity
+    path: Assets/Scenes/Lobby.unity
     guid: 96e6a9e53e8da474ea49468e696e3b4d
   - enabled: 1
-    path: Assets/Justin/Scenes/ChooseFood.unity
+    path: Assets/Scenes/ChooseFood.unity
     guid: 54f2d18aad81a9d44a7c268790a7d233
   - enabled: 1
-    path: Assets/Justin/Scenes/ChooseAttack.unity
+    path: Assets/Scenes/ChooseAttack.unity
     guid: 61b7a6bf606f3034a962140405a587d8
   - enabled: 1
-    path: Assets/Justin/Scenes/Fail.unity
+    path: Assets/Scenes/Fail.unity
     guid: 25d89a2d6fcae914684606413a46ee80
   m_configObjects: {}
