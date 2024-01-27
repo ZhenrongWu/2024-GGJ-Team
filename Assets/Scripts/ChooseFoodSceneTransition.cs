@@ -5,16 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class ChooseFoodSceneTransition : MonoBehaviour
 {
-    
-
-    public void NextLevel()
+    public void SwitchScene(string sceneName)
     {
-        SceneManager.LoadScene("ChooseAttack");
+        SceneManager.LoadScene(sceneName);
     }
     
-    public void Fail()
-    {
-        SceneManager.LoadScene("Fail");
-    }
     
 }

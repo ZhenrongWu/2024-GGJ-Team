@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -16,12 +17,17 @@ public class QTE : MonoBehaviour
     public float maxTime = 3f;
     private float timer;
     
+    public UnityEvent onTimerStart; // 用在dropItem
+    
     
     void Start()
     {
         ring = GetComponent<Image>();
+        
+        // 開始計時
         timer = maxTime;
         ring.fillAmount = 1;
+        onTimerStart?.Invoke();
         
         isPlaying = true;
     }
@@ -39,8 +45,10 @@ public class QTE : MonoBehaviour
                 animator.SetTrigger(triggerName);
                 hitCount++;
                 
+                // 開始計時
                 timer = maxTime;
                 ring.fillAmount = 1;
+                onTimerStart?.Invoke();
             }
             
             if (timer <= 0)
