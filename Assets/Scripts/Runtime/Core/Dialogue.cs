@@ -16,7 +16,7 @@ namespace Runtime.Core
         {
             _sentencesLength = sentences.Length;
 
-            InvokeRepeating(nameof(PlayingSentence), 0, 10);
+            InvokeRepeating(nameof(PlayingSentence), 0, 3);
         }
 
         private void PlayingSentence()
