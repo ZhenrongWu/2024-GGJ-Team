@@ -13,8 +13,10 @@ namespace Runtime.Core
         [Space(10)] [SerializeField] private bool       isNeedTransition;
         [SerializeField]             private Transition transition;
 
-        private int _sentencesLength;
-        private int _loadingTextNum = -1;
+        private int  _sentencesLength;
+        private int  _sentenceNum;
+        private int  _loadingTextNum = -1;
+        private bool _isTextEnding;
 
         private void Start()
         {
@@ -22,12 +24,15 @@ namespace Runtime.Core
 
             StartCoroutine(LoadingText(sentences[0]));
             _loadingTextNum++;
+            _sentenceNum++;
         }
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetMouseButtonDown(0) && _isTextEnding)
             {
+                _sentenceNum++;
+
                 if (_loadingTextNum + 1 < _sentencesLength)
                 {
                     _loadingTextNum++;
@@ -37,6 +42,8 @@ namespace Runtime.Core
                 {
                     // Debug.Log("超出選擇");
                 }
+
+                _isTextEnding = false;
             }
         }
 
@@ -53,9 +60,11 @@ namespace Runtime.Core
                 // Debug.Log(swapStr);
             }
 
+            _isTextEnding = true;
             // Debug.Log("顯示結束");
-            if (isNeedTransition)
+            if (isNeedTransition && _sentenceNum == sentences.Length)
             {
+                yield return new WaitForSeconds(.8f);
                 transition.ChangeSceneEvent();
             }
         }

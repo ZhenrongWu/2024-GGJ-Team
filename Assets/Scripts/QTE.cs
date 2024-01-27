@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class QTE : MonoBehaviour
 {
@@ -18,8 +16,7 @@ public class QTE : MonoBehaviour
     public float maxTime = 3f;
     private float timer;
     
-    public UnityEvent onTimerStart; // 用在dropItem
-    
+    public UnityEvent onTimerStart;
     
     void Start()
     {
@@ -30,7 +27,6 @@ public class QTE : MonoBehaviour
         // 開始計時
         timer = maxTime;
         ring.fillAmount = 1;
-        onTimerStart?.Invoke();
         
         isPlaying = true;
     }
@@ -43,7 +39,7 @@ public class QTE : MonoBehaviour
             timer -= Time.deltaTime;
             ring.fillAmount = timer / maxTime;
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetMouseButtonDown(0))
             {
                 foreach (var c in toyz.childs)
                 {
@@ -56,7 +52,6 @@ public class QTE : MonoBehaviour
                 // 開始計時
                 timer = maxTime;
                 ring.fillAmount = 1;
-                onTimerStart?.Invoke();
             }
             
             if (timer <= 0)
@@ -73,7 +68,9 @@ public class QTE : MonoBehaviour
             isPlaying = false;
             timer = 0;
             ring.gameObject.SetActive(false);
+            onTimerStart?.Invoke();
             
+
             // win
         }
         
