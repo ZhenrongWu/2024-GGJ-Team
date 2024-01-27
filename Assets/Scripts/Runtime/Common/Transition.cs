@@ -4,21 +4,17 @@ using UnityEngine.UI;
 
 namespace Runtime.Common
 {
-    [RequireComponent(typeof(Button))]
     public class Transition : MonoBehaviour
     {
         [SerializeField] private string sceneName;
-
-        private Button _button;
+        [SerializeField] private Button button;
 
         private void Start()
         {
-            _button = GetComponent<Button>();
-
-            _button.onClick.AddListener(ChangeSceneEvent);
+            if (button != null) button.onClick.AddListener(ChangeSceneEvent);
         }
 
-        private void ChangeSceneEvent()
+        public void ChangeSceneEvent()
         {
             SceneManager.LoadScene(sceneName);
         }

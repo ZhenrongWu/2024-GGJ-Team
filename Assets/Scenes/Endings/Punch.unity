@@ -612,6 +612,9 @@ MonoBehaviour:
   animator: {fileID: 703912727}
   triggerName: onHit
   maxTime: 3
+  onTimerStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &928555877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -734,7 +737,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1792486490
 Transform:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
 using System.Collections;
+using Runtime.Common;
 using TMPro;
 using UnityEngine;
 
@@ -8,6 +9,9 @@ namespace Runtime.Core
     {
         [SerializeField] private TextMeshProUGUI showText;
         [SerializeField] private string[]        sentences;
+
+        [Space(10)] [SerializeField] private bool       isNeedTransition;
+        [SerializeField]             private Transition transition;
 
         private int _sentencesLength;
         private int _loadingTextNum = -1;
@@ -35,7 +39,7 @@ namespace Runtime.Core
                 }
             }
         }
-        
+
 
         private IEnumerator LoadingText(string text)
         {
@@ -50,6 +54,10 @@ namespace Runtime.Core
             }
 
             // Debug.Log("顯示結束");
+            if (isNeedTransition)
+            {
+                transition.ChangeSceneEvent();
+            }
         }
     }
 }
