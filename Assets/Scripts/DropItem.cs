@@ -1,16 +1,20 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DropItem : MonoBehaviour
 {
-    public Vector3 startPosition; // 初始位置
+    private Vector3 startPosition; // 初始位置
     public Vector3 endPosition; // 目標位置
     public float totalTime = 3.0f; // 移動到指定位置的總時間
 
     private float elapsedTime = 0.0f;
 
-    
+    private void Start()
+    {
+        startPosition = transform.position;
+    }
 
     void Update()
     {

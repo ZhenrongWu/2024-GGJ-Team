@@ -7,8 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class QTE : MonoBehaviour
 {
-    [SerializeField] Animator animator;
-    [SerializeField] string triggerName;
+    private Toyz toyz;
+    private Animator animator;
+    [SerializeField] private string triggerName;
     private int hitCount = 0;
 
     private Image ring;
@@ -23,6 +24,8 @@ public class QTE : MonoBehaviour
     void Start()
     {
         ring = GetComponent<Image>();
+        toyz = FindObjectOfType<Toyz>();
+        animator = toyz.GetComponent<Animator>();
         
         // 開始計時
         timer = maxTime;
@@ -42,6 +45,11 @@ public class QTE : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                foreach (var c in toyz.childs)
+                {
+                    c.SetActive(true);
+                }
+                
                 animator.SetTrigger(triggerName);
                 hitCount++;
                 
@@ -70,4 +78,5 @@ public class QTE : MonoBehaviour
         }
         
     }
+    
 }

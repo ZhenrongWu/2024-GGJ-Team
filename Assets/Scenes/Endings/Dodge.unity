@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 505405995}
   - component: {fileID: 505405994}
   - component: {fileID: 505405993}
+  - component: {fileID: 505405996}
   m_Layer: 0
   m_Name: Toyz
   m_TagString: Untagged
@@ -229,6 +230,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 910097630}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &505405996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505405992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78c47b58b60971e47b0b2f328180efbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  childs:
+  - {fileID: 912707509}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,7 +387,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5352c70ac5d7184f8e8d5e9c96207b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 505405993}
   triggerName: onDodge
   maxTime: 3
   onTimerStart:
@@ -558,7 +572,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81eb946a66b2f654495a01473ad30143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPosition: {x: 1.24, y: 6, z: 0}
   endPosition: {x: 1.24, y: -0.27, z: 0}
   totalTime: 3
 --- !u!1 &1410934405

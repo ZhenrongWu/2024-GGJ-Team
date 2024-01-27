@@ -174,9 +174,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5352c70ac5d7184f8e8d5e9c96207b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 485343917}
   triggerName: onThrow
   maxTime: 3
+  onTimerStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &125055457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,6 +228,7 @@ GameObject:
   - component: {fileID: 485343919}
   - component: {fileID: 485343918}
   - component: {fileID: 485343917}
+  - component: {fileID: 485343920}
   m_Layer: 0
   m_Name: Toyz
   m_TagString: Untagged
@@ -322,6 +325,20 @@ Transform:
   - {fileID: 1503953899}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &485343920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485343916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78c47b58b60971e47b0b2f328180efbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  childs:
+  - {fileID: 1503953898}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
