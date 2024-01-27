@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -17,14 +16,13 @@ namespace Runtime.Core
         {
             _sentencesLength = sentences.Length;
 
-            // InvokeRepeating(nameof(PlayingSentence), 0, 3);
             StartCoroutine(LoadingText(sentences[0]));
             _loadingTextNum++;
         }
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 if (_loadingTextNum + 1 < _sentencesLength)
                 {
