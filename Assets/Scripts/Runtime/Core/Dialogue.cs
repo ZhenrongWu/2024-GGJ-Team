@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -16,21 +17,27 @@ namespace Runtime.Core
         {
             _sentencesLength = sentences.Length;
 
-            InvokeRepeating(nameof(PlayingSentence), 0, 3);
+            // InvokeRepeating(nameof(PlayingSentence), 0, 3);
+            StartCoroutine(LoadingText(sentences[0]));
+            _loadingTextNum++;
         }
 
-        private void PlayingSentence()
+        private void Update()
         {
-            if (_loadingTextNum + 1 < _sentencesLength)
+            if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                _loadingTextNum++;
-                StartCoroutine(LoadingText(sentences[_loadingTextNum]));
-            }
-            else
-            {
-                // Debug.Log("超出選擇");
+                if (_loadingTextNum + 1 < _sentencesLength)
+                {
+                    _loadingTextNum++;
+                    StartCoroutine(LoadingText(sentences[_loadingTextNum]));
+                }
+                else
+                {
+                    // Debug.Log("超出選擇");
+                }
             }
         }
+        
 
         private IEnumerator LoadingText(string text)
         {
