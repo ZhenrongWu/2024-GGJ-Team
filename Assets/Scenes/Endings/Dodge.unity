@@ -558,6 +558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81eb946a66b2f654495a01473ad30143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPosition: {x: 1.24, y: 6, z: 0}
   endPosition: {x: 1.24, y: -0.27, z: 0}
   totalTime: 3
 --- !u!1 &1410934405
