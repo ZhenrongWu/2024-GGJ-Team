@@ -12,6 +12,7 @@ namespace Runtime.Core
 
         [Space(10)] [SerializeField] private bool       isNeedTransition;
         [SerializeField]             private Transition transition;
+        [SerializeField]             private float      delayTime;
 
         private int  _sentencesLength;
         private int  _sentenceNum;
@@ -64,7 +65,7 @@ namespace Runtime.Core
             // Debug.Log("顯示結束");
             if (isNeedTransition && _sentenceNum == sentences.Length)
             {
-                yield return new WaitForSeconds(.8f);
+                yield return new WaitForSeconds(delayTime);
                 transition.ChangeSceneEvent();
             }
         }

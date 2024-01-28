@@ -492,6 +492,7 @@ MonoBehaviour:
   - "\u51A0:\u8981\u8AAA\u90A3\u9EBC\u96E3\u807D\u662F\u5427?\u4ECA\u5929\u5C31\u8B93\u4F60\u898B\u8B58\u6211\u8857\u9B25\"\u51A0\u8ECD\"--\u51A0\u54E5\u7684\u53B2\u5BB3\u3002"
   isNeedTransition: 1
   transition: {fileID: 1102625340}
+  delayTime: 0.8
 --- !u!114 &1102625342
 MonoBehaviour:
   m_ObjectHideFlags: 0
