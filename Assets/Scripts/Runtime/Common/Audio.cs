@@ -17,9 +17,11 @@ namespace Runtime.Common
 
         public void PlayConversation()
         {
+            if (_audioClipIndex >= audioClips.Length) return;
+
             audioSource.clip = audioClips[_audioClipIndex];
             audioSource.Play();
-            _audioClipIndex++; 
+            _audioClipIndex++;
         }
     }
 }
