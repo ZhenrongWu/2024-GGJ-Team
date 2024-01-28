@@ -14,6 +14,8 @@ namespace Runtime.Core
         [SerializeField]             private Transition transition;
         [SerializeField]             private float      delayTime;
 
+        [Space(10)] [SerializeField] private Audio audio;
+
         private int  _sentencesLength;
         private int  _sentenceNum;
         private int  _loadingTextNum = -1;
@@ -33,6 +35,7 @@ namespace Runtime.Core
             if (Input.GetMouseButtonDown(0) && _isTextEnding)
             {
                 _sentenceNum++;
+                if (audio != null) audio.PlayConversation();
 
                 if (_loadingTextNum + 1 < _sentencesLength)
                 {
