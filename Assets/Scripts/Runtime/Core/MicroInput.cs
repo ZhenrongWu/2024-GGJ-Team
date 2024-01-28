@@ -21,7 +21,7 @@ public class MicroInput : MonoBehaviour
     {
         m_CurrentVolume = GetMaxVolume();
 
-        if (m_CurrentVolume > .2f)
+        if (m_CurrentVolume > .3f)
         {
             SceneManager.LoadScene("Menu");
         }
